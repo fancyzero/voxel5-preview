@@ -1,0 +1,8 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"Voxel5Editor": "UnrealEditor-Voxel5Editor.dll",
+		"Voxel5Lib": "UnrealEditor-Voxel5Lib.dll"
+	}
+}

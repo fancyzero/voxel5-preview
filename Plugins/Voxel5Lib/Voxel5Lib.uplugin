@@ -1,0 +1,52 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Voxel5Preview",
+	"Description": "Easily convert objects into voxel-based representations with preserved material properties. Apply to instanced static meshes and seamless Niagara particle system integration.",
+	"Category": "Voxel",
+	"CreatedBy": "Lin.Zhou",
+	"CreatedByURL": "https://fancyzero.github.io/",
+	"DocsURL": "https://fancyzero.github.io/pages/voxel5-doc/",
+	"FabURL": "com.epicgames.launcher://ue/Fab/product/18fadecd-94b7-4779-afdf-70eed8099ee2",
+	"SupportURL": "https://fancyzero.github.io/posts/Voxel5/",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"EngineVersion": "5.5.0",
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"SupportedTargetPlatforms": [
+		"Win64",
+		"Mac",
+		"iOS",
+		"Android"
+	],
+	"Modules": [
+		{
+			"Name": "Voxel5Lib",
+			"Type": "Runtime",
+			"LoadingPhase": "PostEngineInit",
+			"PlatformAllowList": [
+				"Win64",
+				"Android",
+				"Mac",
+				"iOS"
+			]
+		},
+		{
+			"Name": "Voxel5Editor",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "Niagara",
+			"Enabled": true
+		}
+	]
+}

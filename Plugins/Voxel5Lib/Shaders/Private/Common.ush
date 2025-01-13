@@ -1,0 +1,11 @@
+#pragma once
+
+struct FVoxelData
+{
+    float3 Pos;
+    uint BaseColor;
+    uint PBRColor;    
+    uint padding1;
+    uint padding2;
+    uint padding3;
+};

@@ -1,0 +1,57 @@
+
+
+StructuredBuffer<FVoxelData> {ParameterName}_VoxelBuffer;
+int {ParameterName}_VoxelCount;
+float {ParameterName}_VoxelSize;
+float3 {ParameterName}_LocalBoundsMin;
+float3 {ParameterName}_LocalBoundsMax;
+
+void GetVoxelCount_{ParameterName}( out int Count)
+{
+    Count = {ParameterName}_VoxelCount;
+}
+
+void GetVoxelSize_{ParameterName}( out float Size)
+{
+    Size = {ParameterName}_VoxelSize;
+}
+
+void GetLocalBounds_{ParameterName}( out float3 min, out float3 max)
+{
+    min = {ParameterName}_LocalBoundsMin;
+    max = {ParameterName}_LocalBoundsMax;
+}
+
+
+void GetVoxelDataAtIndex_{ParameterName}( int Index, out float3 OutPos, out float4 OutBaseColor, out float4 OutPBRColor)
+{
+    if ( Index >= 0 && Index < {ParameterName}_VoxelCount)
+    {
+        FVoxelData VD = {ParameterName}_VoxelBuffer[Index];
+        OutPos = VD.Pos;
+        
+        float4 unpackedBaseColor = float4(
+                    ((VD.BaseColor >> 24) & 255), // Red
+                    ((VD.BaseColor >> 16) & 255), // Green
+                    ((VD.BaseColor >> 8) & 255), // Blue
+                    (255) // Alpha
+                ) * (1.0 / 255.0);
+
+        float4 unpackedPBRColor = float4(
+                    ((VD.PBRColor >> 24) & 255), // Red
+                    ((VD.PBRColor >> 16) & 255), // Green
+                    ((VD.PBRColor >> 8) & 255), // Blue
+                    (255) // Alpha
+                ) * (1.0 / 255.0);
+
+        OutBaseColor = unpackedBaseColor;
+        OutPBRColor = unpackedPBRColor;
+    }
+    else
+    {
+        
+        OutPos = float3(0, 0, 0);
+        OutBaseColor = float4(0, 0, 0, 1);
+        OutPBRColor = float4(0, 0, 0, 1);
+    }
+}
