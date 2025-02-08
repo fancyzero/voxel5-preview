@@ -1,8 +1,8 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "1.0",
-	"FriendlyName": "Voxel5Preview",
+	"VersionName": "1.0.6",
+	"FriendlyName": "Voxel5",
 	"Description": "Easily convert objects into voxel-based representations with preserved material properties. Apply to instanced static meshes and seamless Niagara particle system integration.",
 	"Category": "Voxel",
 	"CreatedBy": "Lin.Zhou",
